@@ -1,14 +1,29 @@
-import React from 'react';
-import './app.css';
-import logo from '../assets/images/logo.svg';
-import reactPumpkin from '../assets/images/october-react-logo-glow.png';
-import webs from '../assets/images/web-corner.png';
-import spider from '../assets/images/spider.png';
+import React, {Component} from 'react';
+import Question from './questions'
+import Answers from './answers'
 
-const App = () => (
-    <div>
-        
-    </div>
-);
+
+class App extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            currentQuestion:null,
+            answers:[],Answer
+        }
+    }
+    generateQuestion(){
+
+    }
+    generateAnswers(){
+
+    }
+    render(){
+        return(
+            <div>
+                <Question questions={this.generateQuestion} answers={this.generateAnswers} />
+            </div>
+        )
+    }
+}
 
 export default App;
