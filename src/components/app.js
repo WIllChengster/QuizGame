@@ -8,11 +8,30 @@ class App extends Component {
         super(props)
         this.state={
             currentQuestion:null,
-            answers:[],Answer
+            answers:[],
+            questions:[
+                {
+                  'question': 'what color is the sky?',
+                  'correctAnswer': 'blue',
+                },
+                {
+                  'question':'what color is evans shirt',
+                  'correctAnswer': 'green'
+                },
+                {
+                  'question': 'who is the best around',
+                  'correctAnswer': 'you are'
+                }
+            ],
+            wrongAnswers = [
+                1,2,3
+              ],
+
         }
     }
-    generateQuestion(){
-
+    genRandomQuestion(arr){
+        const question = Math.floor(Math.random() * arr.length);
+        return arr[question];
     }
     generateAnswers(){
 
@@ -20,7 +39,7 @@ class App extends Component {
     render(){
         return(
             <div>
-                <Question questions={this.generateQuestion} answers={this.generateAnswers} />
+                <Question questions={this.generateQuestion(this.state.questions).question} correctAnswer={this.generateQuestion(this.state.questions).answer} wrongAnswers={this.state.wrongAnswers} />
             </div>
         )
     }
