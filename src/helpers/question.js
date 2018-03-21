@@ -1,7 +1,9 @@
 
 
 export function genRandomQuestion(arr){
-    const question = genRandomQuestion(questions);
+    const question = Math.floor(Math.random() * arr.length);
     return arr[question];
 }
+
+
 
