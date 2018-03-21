@@ -6,9 +6,12 @@ import Answers from './answers'
 class App extends Component {
     constructor(props){
         super(props)
-        this.state={
+        this.state = {
             currentQuestion:null,
-            answers:[],Answer
+            answers:[],
+            perc:0,
+            questionsCorrect:0,
+            totalAttempts: 0
         }
     }
     generateQuestion(){
@@ -17,6 +20,16 @@ class App extends Component {
     generateAnswers(){
 
     }
+    onCorrectClick(){
+        this.setState ({totalAttempts}++);
+        this.setState ({questionsCorrect}++);
+    }
+    onIncorrectClick(){
+        this.setState ({totalAttempts}++);
+        this.setState ({perc = questionsCorrect/totalAttempts});
+    }
+
+
     render(){
         return(
             <div>

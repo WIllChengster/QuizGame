@@ -16,6 +16,10 @@ import React from 'react';
 
 export default props =>{
     return(
-        <div>{props.question}</div>
+        <div>
+            <div>
+                {props.question}
+            </div>
+        </div>
     )
 }
