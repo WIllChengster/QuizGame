@@ -2,17 +2,16 @@ import React from 'react';
 
 export default props => {
 
-    const {wrongAnswers,correctAnswer}=props;
-
+    const {correctAnswer,wrongAnswers,correctClick,incorrectClick}=props
     const create = wrongAnswers.map( (item,key)=>{
         return (
-            <div key={key}>{item}</div>
+            <div onClick={incorrectClick} key={key}>{item}</div>
         )
     })
 
     return(
         <div>
-            <div>
+            <div onClick={correctClick} >
                 {correctAnswer}
             </div>
             <div>
