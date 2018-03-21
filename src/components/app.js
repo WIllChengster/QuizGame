@@ -12,7 +12,7 @@ class App extends Component {
         }
     }
     generateQuestion(){
-
+        const randomQuestion = Math.floor(Math.random()* (questionsArray.length) )
     }
     generateAnswers(){
 
